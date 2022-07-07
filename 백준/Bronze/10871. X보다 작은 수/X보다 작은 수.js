@@ -1,8 +1,6 @@
-const input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
+let input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
 
-const x = Number(input[0].split(' ')[1]);
-const inputArr = input[1].split(' ').map(val => Number(val));
+const maxNum = +input[0].split(' ')[1];
+const resultArr = input[1].split(' ').filter((v) => +v < maxNum);
 
-const answer = inputArr.filter(val => x > val);
-
-console.log(answer.join(' '));
+console.log(resultArr.join(' '));
